@@ -18,7 +18,7 @@ const Register = () => {
       formData.append('email', email);
       formData.append('password', password);
 
-      const response = await axios.post('http://54.242.41.61:5000/api/register', { formData });
+      const response = await axios.post('https://54.242.41.61:5000/api/register', { formData });
 
       if (response.ok) {
         // Registration successful, redirect to todo page

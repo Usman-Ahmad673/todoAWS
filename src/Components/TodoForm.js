@@ -30,7 +30,7 @@
         const getTodos = async() => {
 
             // const respnose = axios.get('http://localhost:5000/api/getTodos',{params: { userId }})
-            const respnose = axios.get('http://54.242.41.61:5000/api/getTodos',{params: { userId }})
+            const respnose = axios.get('https://54.242.41.61:5000/api/getTodos',{params: { userId }})
             .then(response => {
                 // console.log('Todo added successfully:', response.data.success);
                 // console.log('Todo added successfully:', response.data.todos);
@@ -56,7 +56,7 @@
             formData.append('todo', addTodo);
             
             // const respnose = axios.get('http://localhost:5000/api/getTodos')
-            const respnose = axios.post('http://54.242.41.61:5000/api/addTodo', formData , config)
+            const respnose = axios.post('https://54.242.41.61:5000/api/addTodo', formData , config)
             .then(response => {
                 // Handle success
                 // console.log('Todo added successfully:', response.data.success);
@@ -81,7 +81,7 @@
             formData.append('userId', userId);
             formData.append('todoId', id);
 
-            const response = await axios.delete('http://54.242.41.61:5000/api/deleteTodo', {
+            const response = await axios.delete('https://54.242.41.61:5000/api/deleteTodo', {
                 headers: {"Content-Type":"application/json"},
                 data: formData
             });
@@ -94,7 +94,7 @@
             
                     
             const response = await axios.put(
-                'http://54.242.41.61:5000/api/updateTodo',
+                'https://54.242.41.61:5000/api/updateTodo',
                 {
                     userId: userId,
                     todoId: id,
@@ -126,7 +126,7 @@
                 
                 
                 const response = await axios.put(
-                    'http://54.242.41.61:5000/api/updateTodo',
+                    'https://54.242.41.61:5000/api/updateTodo',
                     {
                         userId: userId,
                         todoId: id,

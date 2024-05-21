@@ -21,7 +21,7 @@
 
         const getTodos = async () => {
             try {
-            const response = await axios.get('http://54.242.41.61:5000/api/getTodos');
+            const response = await axios.get('https://54.242.41.61:5000/api/getTodos');
             setTodos(response.data.todos);
             } catch (error) {
             console.error('Error fetching todos:', error);
@@ -30,7 +30,7 @@
 
         const handleAddTodo = async () => {
             try {
-            const response = await axios.post('http://54.242.41.61:5000/api/addTodo', { userId: userId, todo: todoText });
+            const response = await axios.post('https://54.242.41.61:5000/api/addTodo', { userId: userId, todo: todoText });
             setTodos([...todos, response.data.todo]);
             setTodoText('');
             } catch (error) {
@@ -40,7 +40,7 @@
         
         const handleUpdateTodo = async (todoId, newText) => {
             try {
-            await axios.put(`http://54.242.41.61:5000/api/updateTodo`, { userId: userId, todoId: todoId ,todo: newText });
+            await axios.put(`https://54.242.41.61:5000/api/updateTodo`, { userId: userId, todoId: todoId ,todo: newText });
             // Update todos state to reflect the changes
             const updatedTodos = todos.map(todo =>
                 todo._id === todoId ? { ...todo, text: newText } : todo
@@ -53,7 +53,7 @@
         
         const handleDeleteTodo = async (todoId) => {
             try {
-            await axios.delete(`http://54.242.41.61:5000/api/deleteTodo`, { userId: userId, todoId: todoId });
+            await axios.delete(`https://54.242.41.61:5000/api/deleteTodo`, { userId: userId, todoId: todoId });
             const updatedTodos = todos.filter(todo => todo._id !== todoId);
             setTodos(updatedTodos);
             } catch (error) {
@@ -63,7 +63,7 @@
         const handleMarkTodo = async (todoId) => {
             try {
                 setTodoMarked(!todoMarked)
-            await axios.put(`http://54.242.41.61:5000/api/updateTodo`, { userId: userId, todoId: todoId ,todo: todoMarked })
+            await axios.put(`https://54.242.41.61:5000/api/updateTodo`, { userId: userId, todoId: todoId ,todo: todoMarked })
             setTodoMarked(false)
             } catch (error) {
             console.error('Error deleting todo:', error);

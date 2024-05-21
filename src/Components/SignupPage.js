@@ -15,7 +15,7 @@ const SignupPage = () => {
     try{
         const response = await axios.post(
           // 'https://todoapp-ten-orcin.vercel.app/register',
-          'http://54.242.41.61:5000/api/register',
+          'https://54.242.41.61:5000/api/register',
           formData,
           {
             headers: { 'Content-Type': 'application/json' },

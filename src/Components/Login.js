@@ -13,7 +13,7 @@ const Login = () => {
       formData.append('email', email);
       formData.append('password', password);
 
-      const response = await axios.post('http://54.242.41.61:5000/api/login', formData);
+      const response = await axios.post('https://54.242.41.61:5000/api/login', formData);
 
       if (response.data.success) {
         // Login successful, redirect to todo page
